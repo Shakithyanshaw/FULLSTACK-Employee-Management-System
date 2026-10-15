@@ -7,6 +7,7 @@ import {
   PalmtreeIcon,
   PlusIcon,
 } from 'lucide-react';
+import LeaveHistory from '../components/leave/LeaveHistory';
 
 const Leave = () => {
   const [leaves, setLeaves] = useState([]);
@@ -83,6 +84,7 @@ const Leave = () => {
           ))}
         </div>
       )}
+      <LeaveHistory leaves={leaves} isAdmin={isAdmin} onUpdate={fetchLeaves} />
     </div>
   );
 };
