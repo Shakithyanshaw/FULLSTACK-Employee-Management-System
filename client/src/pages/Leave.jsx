@@ -8,6 +8,7 @@ import {
   PlusIcon,
 } from 'lucide-react';
 import LeaveHistory from '../components/leave/LeaveHistory';
+import ApplyLeaveModal from '../components/leave/ApplyLeaveModal';
 
 const Leave = () => {
   const [leaves, setLeaves] = useState([]);
@@ -85,6 +86,11 @@ const Leave = () => {
         </div>
       )}
       <LeaveHistory leaves={leaves} isAdmin={isAdmin} onUpdate={fetchLeaves} />
+      <ApplyLeaveModal
+        open={showModal}
+        onClose={() => setShowModal(false)}
+        onSuccess={fetchLeaves}
+      />
     </div>
   );
 };
