@@ -1,3 +1,4 @@
+import Attendance from '../models/Attendance.js';
 import Employee from '../models/Employee.js';
 
 // Clock in/out for employee
