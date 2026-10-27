@@ -63,4 +63,22 @@ export const getPayslips = async (req, res) => {
 };
 
 // Get payslip by ID
-//GET /api/payslips/:id
+// GET /api/payslips/:id
+export const getPayslipById = async (req, res) => {
+  try {
+    const payslip = await Payslip.findById(req.params.id)
+      .populate('employeeId')
+      .lean();
+
+    if (!payslip) return res.status(404).json({ error: 'Not found' });
+
+    const result = {
+      ...payslip,
+      id: payslip._id.toString(),
+      employee: payslip.employeeId,
+    };
+    return res.json(result);
+  } catch (error) {
+    return res.status(500).json({ error: 'Failed' });
+  }
+};
