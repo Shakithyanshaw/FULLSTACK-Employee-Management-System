@@ -1,4 +1,3 @@
-import { createRef } from 'react';
 import { DEPARTMENTS } from '../constants/departments.js';
 import Attendance from '../models/Attendance.js';
 import Employee from '../models/Employee.js';

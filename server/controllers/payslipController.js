@@ -1,4 +1,4 @@
-import Payslip from '../models/Payslip';
+import Payslip from '../models/Payslip.js';
 
 // Create payslip
 //POST /api/payslips
