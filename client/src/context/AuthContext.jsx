@@ -51,7 +51,7 @@ export function AuthProvider({ children }) {
     setUser(null);
   };
 
-  value = { user, token, loading, login, logout, refreshSession };
+  const value = { user, token, loading, login, logout, refreshSession };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
