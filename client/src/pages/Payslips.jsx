@@ -10,7 +10,8 @@ const Payslips = () => {
   const [payslips, setPayslips] = useState([]);
   const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { user } = useAuth;
+
+  const { user } = useAuth();
   const isAdmin = user?.role === 'ADMIN';
 
   const fetchPayslips = useCallback(async () => {
@@ -33,7 +34,7 @@ const Payslips = () => {
       api
         .get('/employees')
         .then((res) => setEmployees(res.data.filter((e) => !e.isDeleted)))
-        .catch(() => ({}));
+        .catch(() => {});
   }, [isAdmin]);
 
   if (loading) return <Loading />;
