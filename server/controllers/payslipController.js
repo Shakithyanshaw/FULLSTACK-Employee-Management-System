@@ -1,3 +1,4 @@
+import Employee from '../models/Employee.js';
 import Payslip from '../models/Payslip.js';
 
 // Create payslip
@@ -16,10 +17,11 @@ export const createPayslip = async (req, res) => {
 
     const payslip = await Payslip.create({
       employeeId,
+      month: Number(month),
       year: Number(year),
       basicSalary: Number(basicSalary),
-      allowances: Number(allowances),
-      deductions: Number(deductions),
+      allowances: Number(allowances || 0),
+      deductions: Number(deductions || 0),
       netSalary,
     });
 
