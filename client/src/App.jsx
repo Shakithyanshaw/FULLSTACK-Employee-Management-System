@@ -4,12 +4,12 @@ import LoginLanding from './pages/LoginLanding';
 import Layout from './pages/Layout';
 import Dashboard from './pages/Dashboard';
 import Employees from './pages/Employees';
-import Attendance from './pages/Attendance';
 import Leave from './pages/Leave';
 import Payslips from './pages/Payslips';
 import Settings from './pages/Settings';
 import PrintPayslip from './pages/PrintPayslip';
 import LoginForm from './components/LoginForm';
+import Attendance from './pages/Attendance';
 
 const App = () => {
   return (
