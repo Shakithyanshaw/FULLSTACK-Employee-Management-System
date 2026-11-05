@@ -20,6 +20,7 @@ const ChangePasswordModal = ({ open, onClose }) => {
         newPassword,
       });
       if (!data.success) throw new Error(data.error || 'Failed');
+      setMessage({ type: 'success', text: 'Password updated successfully' });
       e.target.reset();
     } catch (error) {
       setMessage({ type: 'error', text: error.message });
